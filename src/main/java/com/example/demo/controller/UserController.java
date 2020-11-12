@@ -11,7 +11,7 @@ public class UserController {
 
     @RequestMapping(value  = "/name", method = RequestMethod.GET)
     public String getname() {
-        return "aaa";
+        return "ccc";
     }
 
 }
