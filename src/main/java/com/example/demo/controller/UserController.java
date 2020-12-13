@@ -26,10 +26,10 @@ public class UserController {
     @GetMapping("/downloadfile")
     public String downloadFile(HttpServletRequest request, HttpServletResponse response) {
         String fileName = "downloaddog.jpeg";// 文件名
+        String pname = request.getParameter("pname");
+        File fileDir = UploadUtils.getImgDirFile();
         if (fileName != null) {
-
-            File fileDir = UploadUtils.getImgDirFile();
-            File file = new File(fileDir.getAbsolutePath() + File.separator + "dog3.jpg");
+            File file = new File(fileDir.getAbsolutePath() + File.separator + pname);
             if (file.exists()) {
                 response.setContentType("application/force-download");// 设置强制下载不打开
                 response.addHeader("Content-Disposition", "attachment;fileName=" + fileName);// 设置文件名
@@ -66,12 +66,12 @@ public class UserController {
                 }
             }
         }
-        return "下载失败";
+        return "文件下载路径"+fileDir.getAbsolutePath() + File.separator + pname;
     }
 
 
     @RequestMapping(path = "/upload", method = RequestMethod.POST)
-    public void uploadPicture(@RequestParam("file") MultipartFile multipartFile) throws IOException {
+    public String uploadPicture(@RequestParam("file") MultipartFile multipartFile) throws IOException {
         // 拿到文件名
         String filename = multipartFile.getOriginalFilename();
 
@@ -91,6 +91,8 @@ public class UserController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        return "文件上传路径:"+fileDir.getAbsolutePath();
 
     }
 }
