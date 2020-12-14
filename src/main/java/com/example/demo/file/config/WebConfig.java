@@ -1,5 +1,5 @@
 
-package com.example.demo.config;
+package com.example.demo.file.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -14,8 +14,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-                //registry.addResourceHandler("/image/**").addResourceLocations("file:/Users/sunqi/Desktop/work/mylearn/src/main/resources/static/");
-
+        // http://42.192.80.206:8082/image/dog.jpg
         registry.addResourceHandler("/image/**").addResourceLocations("classpath:/static/");
 
 
