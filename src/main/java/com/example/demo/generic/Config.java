@@ -13,6 +13,12 @@ public class Config implements Serializable {
 
     private String configkey;
 
+    /**
+     * example
+     * {
+     *     "signInScore":5
+     * }
+     */
     private String value;
 
     private String description;

@@ -14,7 +14,19 @@ public class SignScoreConfigImpl implements IConfig<SignScore>{
 
 	@Override
 	public SignScore getConfig(String configValue) {
-		// db query
+
+		/**查询规则，将规则json串转成实体类
+		 * {
+		 * "signInScore":5
+		 * }
+		 *
+		 * {
+		 * "amount":5,
+		 * "score":51,
+		 * }
+		 *
+		 */
+
 		Config config = null;
 		//return JSON.parseObject(config.getValue(), SignScore.class);
 		return null;
