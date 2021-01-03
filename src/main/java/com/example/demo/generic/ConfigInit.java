@@ -22,7 +22,7 @@ public class ConfigInit implements ApplicationContextAware{
 	
 	private ApplicationContext ac;
 
-	private List<String> rules = Arrays.asList("amountScoreConfigImpl", "signScoreConfigImpl");
+	private List<String> rules = Arrays.asList("signScoreConfigImpl");
 	
 	@Bean
 	public ConfigHolder configHolder(){
