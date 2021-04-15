@@ -5,7 +5,7 @@ package com.example.demo.generic;
  *
  *         2020年9月9日
  */
-public enum ConfigTypeEnum {
+public enum AConfigTypeEnum {
 	
 	/**
 	 * 钱数对应的分数规则

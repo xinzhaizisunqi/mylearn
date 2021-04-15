@@ -8,7 +8,7 @@ import java.io.Serializable;
  * 2020年9月15日
  */
 
-public class Config implements Serializable {
+public class AConfig implements Serializable {
     private Long id;
 
     private String configkey;

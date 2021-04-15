@@ -6,7 +6,7 @@ package com.example.demo.generic;
  * @description: TODO
  * @date 2020/12/31 17:15
  */
-public interface IConfig<T> {
+public interface AIConfig<T> {
 
     /**获取配置类
      * @param configValue
@@ -17,5 +17,5 @@ public interface IConfig<T> {
     /**获取配置类类型
      * @return
      */
-    public ConfigTypeEnum getType();
+    public AConfigTypeEnum getType();
 }

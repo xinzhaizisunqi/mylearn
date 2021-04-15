@@ -7,7 +7,7 @@ package com.example.demo.generic;
  * 2020年9月8日
  */
 
-public class SignScore {
+public class ASignScore {
 	
 	private Integer signInScore;
 
@@ -15,7 +15,7 @@ public class SignScore {
 		return signInScore;
 	}
 
-	public SignScore setSignInScore(Integer signInScore) {
+	public ASignScore setSignInScore(Integer signInScore) {
 		this.signInScore = signInScore;
 		return this;
 	}
