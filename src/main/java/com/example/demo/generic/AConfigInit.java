@@ -26,10 +26,10 @@ public class AConfigInit implements ApplicationContextAware{
 	@Bean
 	public AConfigHolder configHolder(){
 		AConfigHolder configHolder = new AConfigHolder();
-	     for (String rule: rules) {
+	 /*    for (String rule: rules) {
 	    	 AIConfig<?> bean = (AIConfig<?>)this.ac.getBean(rule);
 	    	 configHolder.add(bean.getType(), bean);
-	     }
+	     }*/
 
 		return configHolder;
 	}
