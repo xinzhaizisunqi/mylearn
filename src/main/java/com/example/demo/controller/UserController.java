@@ -13,7 +13,7 @@ public class UserController {
 
     @RequestMapping(value = "/name", method = RequestMethod.GET)
     public String getname() {
-        return "8083hehehehe2222eeeeee";
+        return "0.0.6";
     }
 
 

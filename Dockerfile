@@ -10,7 +10,7 @@
 ##EXPOSE 80
 
 
-FROM openjdk:8-jdk-alpine
+FROM java:8
 VOLUME /tmp
 COPY target/demo-0.0.1-SNAPSHOT.jar /usr/app.jar
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/app.jar"]

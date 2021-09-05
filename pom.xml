@@ -47,8 +47,27 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.13</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <repository>registry.cn-beijing.aliyuncs.com/qisun/beego</repository>
+                    <tag>0.0.6</tag>
+                </configuration>
+            </plugin>
         </plugins>
 
+        <!--mvn clean package dockerfile:build dockerfile:push-->
     </build>
     <pluginRepositories>
         <pluginRepository>
@@ -59,6 +78,8 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
+
+
 
 
 </project>
