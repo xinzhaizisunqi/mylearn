@@ -27,6 +27,22 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -62,7 +78,7 @@
                 </executions>
                 <configuration>
                     <repository>registry.cn-beijing.aliyuncs.com/qisun/beego</repository>
-                    <tag>0.0.6</tag>
+                    <tag>0.0.7</tag>
                 </configuration>
             </plugin>
         </plugins>

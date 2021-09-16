@@ -1,41 +1,26 @@
 package com.example.demo.common;
 
+import lombok.Data;
+
+import javax.annotation.sql.DataSourceDefinition;
+
 /**
  * @author 孙琦
  * @version 1.0
  * @description: TODO
- * @date 2021/7/14 11:13
+ * @date 2021/9/14 11:56
  */
+@Data
 public class User {
 
-    private String username;
+    private String name;
 
-    private String password;
+    private String openid;
 
-    public User() {
+    private String mobile;
 
-    }
+    private Integer uploadCount;
 
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
+    private String status;
 
-    public String getUsername() {
-        return username;
-    }
-
-    public User setUsername(String username) {
-        this.username = username;
-        return this;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public User setPassword(String password) {
-        this.password = password;
-        return this;
-    }
 }
