@@ -1,6 +1,7 @@
 package com.example.demo.mirservice.ud;
 
 import com.example.demo.common.ClientResponse;
+import com.example.demo.common.Param;
 
 import java.io.IOException;
 
@@ -14,4 +15,10 @@ public interface IUdService {
 
 
     ClientResponse getUd(String host,String mobile) throws IOException;
+
+    ClientResponse checkBill(Param param) throws IOException;
+
+    ClientResponse deleteUd(Param param) throws IOException;
+
+
 }

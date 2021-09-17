@@ -1,9 +1,7 @@
 package com.example.demo.controller;
-import com.example.demo.common.ApiResponse;
-import com.example.demo.common.ClientResponse;
-import com.example.demo.common.Authority;
-import com.example.demo.common.User;
+import com.example.demo.common.*;
 import com.example.demo.mirservice.ud.IUdService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.alibaba.fastjson.JSON;
@@ -14,6 +12,7 @@ import java.util.List;
 
 
 @RestController
+@Log4j2
 public class UserController {
 
     @Autowired
@@ -40,17 +39,61 @@ public class UserController {
        return  ApiResponse.error("密码账户错误");
     }
 
-
+    /**
+     * 获取用户
+     * @param host
+     * @param mobile
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/getUd", method = RequestMethod.GET)
     @CrossOrigin
     public ApiResponse<List<User>> getUd(@RequestParam String host, @RequestParam String mobile) throws Exception {
-        ClientResponse response = service.getUd(host,mobile);
-        List<User> users = JSON.parseArray(response.getContent(),User.class);
+        //ClientResponse response = service.getUd(host,mobile);
+       // List<User> users = JSON.parseArray(response.getContent(),User.class);
+        User u = new User();
+        u.setUploadCount(2);
+        u.setStatus("PASS");
+        u.setOpenid("ocJOVjlqD1L8Tru7KAKOKLHgn8aM");
+        u.setName("qiqi");
+        u.setMobile("151****2575");
         List<User> us = new ArrayList<>();
-        for (User user : users) {
+        us.add(u);
+   /*     for (User user : users) {
             us.add(user);
-        }
+        }*/
         return ApiResponse.success(us);
+    }
+
+    /**
+     * 审核小票
+     * @param param
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/check", method = RequestMethod.POST)
+    @CrossOrigin
+    public ApiResponse<String> check(@RequestBody Param param) throws Exception {
+        //ClientResponse response = service.checkBill(param);
+        log.info("begin check:"+param.getOpenid());
+        ClientResponse response = new ClientResponse(200,"","");
+        if (response.getStatusCode() != 200) {
+            return ApiResponse.error("");
+        }
+        return ApiResponse.success("");
+    }
+
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    @CrossOrigin
+    public ApiResponse<String> delete(@RequestBody Param param) throws Exception {
+       // ClientResponse response = service.deleteUd(param);
+        log.info("begin delete:"+param.getOpenid());
+        ClientResponse response = new ClientResponse(200,"","");
+        if (response.getStatusCode() != 200) {
+            return ApiResponse.error("");
+        }
+        return ApiResponse.success("");
     }
 }
 
